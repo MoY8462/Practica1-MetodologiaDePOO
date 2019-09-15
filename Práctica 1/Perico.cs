@@ -2,6 +2,9 @@
 
 namespace Práctica_1
 {
+
+    //Class Perico es una clase hija de Class Animal
+
     class Perico : Animal
     {
         #region Atributos
@@ -21,13 +24,10 @@ namespace Práctica_1
         public Perico(string nombre) : base(nombre)
         {
             Nombre = nombre;
-            Patas = 2;
-            Vertebrado = true;
         }
         public Perico(byte edad) : base(edad)
         {
             Edad = edad;
-            Vertebrado = true;
         }
         #endregion
 

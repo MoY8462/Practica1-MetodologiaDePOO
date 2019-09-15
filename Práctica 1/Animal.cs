@@ -4,6 +4,8 @@ namespace Práctica_1
 {
     abstract class Animal
     {
+        //Class Animal es la clase Padre
+
         #region Atributos
         private byte patas, edad;
         private string nombre, color;
@@ -19,7 +21,7 @@ namespace Práctica_1
         #endregion
 
         #region Constructores
-        public Animal() { }
+        public Animal() {}
         public Animal(string nombre)
         {
             Nombre = nombre;
@@ -51,7 +53,7 @@ namespace Práctica_1
         {
             Console.WriteLine("Ingresa el nombre");
             Nombre = Console.ReadLine();
-            Console.WriteLine("Ingresa la edad del perico");
+            Console.WriteLine("Ingresa la edad");
             Edad = byte.Parse(Console.ReadLine());
         }
 

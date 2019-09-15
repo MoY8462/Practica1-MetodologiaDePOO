@@ -9,6 +9,7 @@ namespace Práctica_1
             Perico miPerico = new Perico();
             miPerico.Datos();
             miPerico.Mostrar();
+            miPerico.Volar();
         }
     }
 }
