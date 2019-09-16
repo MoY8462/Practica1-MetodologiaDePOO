@@ -48,7 +48,7 @@ namespace Práctica_1
 
         #region Métodos
 
-        //Método para que el usuario defina los datos del animal
+        //1º Método: El usuario defina los datos del animal
         public virtual void Datos()
         {
             Console.WriteLine("\nIngresa el nombre: ");
@@ -61,22 +61,22 @@ namespace Práctica_1
             Alimento = Console.ReadLine();
         }
 
-        //Método que muestra todos los datos del animal
+        //2º Método: Se muestran todos los datos del animal
         public virtual void Mostrar()
         {
-            Console.WriteLine("Las características de tu animal son: " +
-                "\npatas: " + Patas + "\nedad: " + Edad + "\nnombre: " + Nombre + "\ncolor: " + Color);
+            Console.WriteLine("\nLas características de tu animal son: " +
+                "\nNúmero de patas: " + Patas + "\nEdad: " + Edad +" años \nNombre: " + Nombre + "\nColor: " + Color);
             if (vertebrado == true)
             {
-                Console.WriteLine("vertebrado: sí");
+                Console.WriteLine("Vertebrado: Sí");
             }
             else
             {
-                Console.WriteLine("vertebrado: no");
+                Console.WriteLine("Vertebrado: No");
             }
         }
 
-        //Permite saber si el animal está comiendo
+        //3º Método: Permite saber si el animal está comiendo
         public void Comer()
         {
             //Variable del método comer
@@ -85,23 +85,28 @@ namespace Práctica_1
             alimentacion = char.Parse(Console.ReadLine());
             if (alimentacion == 'S')
             {
-                Console.WriteLine(Nombre+" está comiendo");
+                Console.WriteLine("\n"+Nombre+" está comiendo");
             }
             else
             {
-                Console.WriteLine(Nombre+" no está comiendo");
+                Console.WriteLine("\n"+Nombre+" no está comiendo");
             }
         }
 
+        //4º Método: 
         public void Dormir()
         {
-            Console.WriteLine(Nombre+" está comiendo");
+            Console.WriteLine(Nombre+" está durmiendo");
         }
 
+        //5º Método
         public void TomarAgua()
         {
             Console.WriteLine(Nombre+" está tomando agua");
         }
+
+        //6º Método
+
         #endregion
     }
 }
