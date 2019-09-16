@@ -18,7 +18,7 @@ namespace Práctica_1
         //Protege el valor que la edad puede tomar, al declararse que esta no puede ser mayor a 100 años
         public byte Edad { get => edad; set
             {
-                if (value < 100)
+                if (value < 300)
                 {
                     edad = value;
                 }else
@@ -35,14 +35,27 @@ namespace Práctica_1
         #endregion
 
         #region Constructores
-        public Animal() {}
+        public Animal() {
+            Edad = 5;
+            Color = "negro";
+        }
+        public Animal(string nombre, byte edad, byte patas, string color, string alimento, bool vertebrado)
+        {
+            Nombre = nombre;
+            Edad = edad;
+            Patas = patas;
+            Color = color;
+            Alimento = alimento;
+            Vertebrado = vertebrado;
+        }
         public Animal(string nombre)
         {
             Nombre = nombre;
         }
-        public Animal(byte edad)
+        public Animal(byte edad, bool vertebrado)
         {
             Edad = edad;
+            Vertebrado = vertebrado;
         }
         #endregion
 
@@ -51,28 +64,29 @@ namespace Práctica_1
         //Método para que el usuario defina los datos del animal
         public virtual void Datos()
         {
-            Console.WriteLine("\nIngresa el nombre: ");
+            Console.Write("\nIngresa el nombre: ");
             Nombre = Console.ReadLine();
-            Console.WriteLine("\nIngresa la edad: ");
+            Console.Write("\nIngresa la edad: ");
             Edad = byte.Parse(Console.ReadLine());
-            Console.WriteLine("\nIngresa el color: ");
+            Console.Write("\nIngresa el color: ");
             Color = Console.ReadLine();
-            Console.WriteLine("\nIngrese el alimento: ");
+            Console.Write("\nIngrese el alimento: ");
             Alimento = Console.ReadLine();
         }
 
         //Método que muestra todos los datos del animal
         public virtual void Mostrar()
         {
-            Console.WriteLine("Las características de tu animal son: " +
-                "\npatas: " + Patas + "\nedad: " + Edad + "\nnombre: " + Nombre + "\ncolor: " + Color);
+            Console.WriteLine("\t\t\tLas características de tu animal son: " +
+                "\n\t\t Patas: " + Patas + "\n\t\t Edad: " + Edad + "\n\t\t Nombre: " + Nombre +
+                "\n\t\t Color: " + Color);
             if (vertebrado == true)
             {
-                Console.WriteLine("vertebrado: sí");
+                Console.WriteLine("\n\t\t Vertebrado: sí");
             }
             else
             {
-                Console.WriteLine("vertebrado: no");
+                Console.WriteLine("\n\t\t Vertebrado: no");
             }
         }
 
@@ -81,26 +95,38 @@ namespace Práctica_1
         {
             //Variable del método comer
             char alimentacion;
-            Console.WriteLine("\n{0} tiene {1} en su bandeja? (S/N)\n", Nombre, Alimento);
-            alimentacion = char.Parse(Console.ReadLine());
-            if (alimentacion == 'S')
+            int i = 1;
+
+            while (i == 1)
             {
-                Console.WriteLine(Nombre+" está comiendo");
-            }
-            else
-            {
-                Console.WriteLine(Nombre+" no está comiendo");
+                Console.WriteLine("\n\n\t\t ¿{0} tiene {1} en su bandeja? (S/N)\n", Nombre, Alimento);
+                alimentacion = char.Parse(Console.ReadLine());
+                Char.ToUpper(alimentacion);
+                if (alimentacion == 'S')
+                {
+                    Console.WriteLine(Nombre + " está comiendo");
+                    i = 2;
+                }
+                else if(alimentacion == 'N')
+                {
+                    Console.WriteLine(Nombre + " no está comiendo");
+                    i = 2;
+                }
+                else
+                {
+                    Console.WriteLine("Inténtalo de nuevo");
+                }
             }
         }
 
         public void Dormir()
         {
-            Console.WriteLine(Nombre+" está comiendo");
+            Console.WriteLine("\t\t"+Nombre+" está comiendo");
         }
 
         public void TomarAgua()
         {
-            Console.WriteLine(Nombre+" está tomando agua");
+            Console.WriteLine("\t\t"+Nombre+" está tomando agua");
         }
         #endregion
     }
