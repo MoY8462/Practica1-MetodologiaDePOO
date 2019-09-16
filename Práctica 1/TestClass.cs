@@ -14,6 +14,7 @@ namespace Práctica_1
             miPerico.Volar();
             miPerico.Dormir();
             miPerico.TomarAgua();
+            System.Threading.Thread.Sleep(5000);
         }
     }
 }
