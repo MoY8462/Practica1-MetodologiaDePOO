@@ -21,11 +21,15 @@ namespace Práctica_1
             Patas = 2;
             Vertebrado = true;
         }
-        public Perico(string nombre) : base(nombre)
+        public Perico(string nombre, byte edad, string color) 
         {
             Nombre = nombre;
+            Edad = edad;
+            Color = color;
+            Patas = 2;
+            Vertebrado = true;
         }
-        public Perico(byte edad) : base(edad)
+        public Perico(byte edad) 
         {
             Edad = edad;
         }
@@ -34,31 +38,42 @@ namespace Práctica_1
         #region Métodos
         public override void Datos()
         {
-            Console.WriteLine("\nEste animal es un perico\n"); 
+            Console.WriteLine("\n\t\t Este animal es un perico\n"); 
             base.Datos();
-            Console.WriteLine("\nIngresa la especie del perico: ");
+            Console.WriteLine("\t\t Ingresa la especie del perico: ");
             Especie = Console.ReadLine();
         }
 
         public override void Mostrar()
         { 
             base.Mostrar();
-            Console.WriteLine("especie: "+Especie);
+            Console.WriteLine("\n\t\t Especie: "+Especie);
         }
 
         //Metodo que permite saber si el Perico puede volar
         public void Volar()
         {
-            char jaula;
-            Console.WriteLine(Nombre+" está dentro de su jaula? (S/N)");
-            jaula = char.Parse(Console.ReadLine());
-            if (jaula == 'S')
+            char jaula;int i = 1;
+
+            while (i == 1)
             {
-                Console.WriteLine(Nombre + " está volando");
-            }
-            else
-            {
-                Console.WriteLine(Nombre + " está volando");
+                Console.WriteLine("\n\t\t" + Nombre + " está dentro de su jaula? (S/N)");
+                jaula = char.Parse(Console.ReadLine());
+                Char.ToUpper(jaula);
+                if (jaula == 'S')
+                {
+                    Console.WriteLine("\n\t\t" + Nombre + " está volando");
+                    i = 2;
+                }
+                else if (jaula== 'N')
+                {
+                    Console.WriteLine("\n\t\t" + Nombre + " no está volando");
+                    i = 2;
+                }
+                else
+                {
+                    Console.WriteLine("\n\t\tInténtalo de nuevo");
+                }
             }
         }
 
