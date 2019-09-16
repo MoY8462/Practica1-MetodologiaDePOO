@@ -36,6 +36,7 @@ namespace Práctica_1
         #endregion
 
         #region Métodos
+        //Llama al método datos de class animal y registra el valor del atributo especie
         public override void Datos()
         {
             Console.WriteLine("\n\t\t Este animal es un perico\n"); 
