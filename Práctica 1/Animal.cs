@@ -23,7 +23,7 @@ namespace Práctica_1
                     edad = value;
                 }else
                 {
-                    Console.WriteLine("Ingresaste una edad invalida");
+                    Console.WriteLine("Ingresaste una edad inválida.");
                 }
             }
                 
@@ -61,7 +61,8 @@ namespace Práctica_1
 
         #region Métodos
 
-        //Método para que el usuario defina los datos del animal
+        
+        //1º Método: El usuario defina los datos del animal
         public virtual void Datos()
         {
             Console.Write("\nIngresa el nombre: ");
@@ -74,7 +75,7 @@ namespace Práctica_1
             Alimento = Console.ReadLine();
         }
 
-        //Método que muestra todos los datos del animal
+        //2º Método: Se muestran todos los datos del animal
         public virtual void Mostrar()
         {
             Console.WriteLine("\t\t\tLas características de tu animal son: " +
@@ -90,7 +91,7 @@ namespace Práctica_1
             }
         }
 
-        //Permite saber si el animal está comiendo
+        //3º Método: Permite saber si el animal está comiendo
         public void Comer()
         {
             //Variable del método comer
@@ -118,12 +119,13 @@ namespace Práctica_1
                 }
             }
         }
-
+        //4º Método: Indica que el animal duerme
         public void Dormir()
         {
             Console.WriteLine("\t\t"+Nombre+" está comiendo");
         }
-
+        
+        //5º Método: Indica que el animal toma agua
         public void TomarAgua()
         {
             Console.WriteLine("\t\t"+Nombre+" está tomando agua");
